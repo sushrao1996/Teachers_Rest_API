@@ -5,7 +5,7 @@ const TeacherRouter = express.Router();
 TeacherRouter.get("/:id", (req, res) => {
   const { id = "" } = req.params;
   const requiredTeacher = Teachers.find(Teacher => {
-    if (parseInt(id) === Teacher.ID) return true;
+    if (parseInt(id, 10) === Teacher.ID) return true;
     else return false;
   });
   if (requiredTeacher) {
@@ -26,7 +26,7 @@ TeacherRouter.get("/:id", (req, res) => {
     const { id } = req.params;
     let requiredTeacherIndex;
     const requiredTeacher = Teachers.find((Teacher, TeacherIndex) => {
-      if (parseInt(id) === Teacher.ID) {
+      if (parseInt(id, 10) === Teacher.ID) {
         requiredTeacherIndex = TeacherIndex;
         return true;
       } else {
@@ -53,7 +53,7 @@ TeacherRouter.get("/:id", (req, res) => {
     const { id } = req.params;
     let requiredTeacherIndex;
     const requiredTeacher = Teachers.find((Teacher, TeacherIndex) => {
-      if (parseInt(id) === Teacher.ID) {
+      if (parseInt(id, 10) === Teacher.ID) {
         requiredTeacherIndex = TeacherIndex;
         return true;
       } else {
