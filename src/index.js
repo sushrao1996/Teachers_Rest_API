@@ -4,7 +4,7 @@ const TeacherRouter = require("./Routers/TeacherRouter");
 const TeachersRouter = require("./Routers/TeachersRouter");
 const app = express();
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.send("Welcome");
 });
 app.use(bodyparser.json());
 app.use("/teacher", TeacherRouter);
